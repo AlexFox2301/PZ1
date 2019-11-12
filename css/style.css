@@ -57,7 +57,7 @@ form input {
 	border-radius: 4px;
 }
 
-form input:reqired:invalid {
+form input:not([type="checkbox"]):invalid {
 	border-color: red;
 	background-image: url(../images/times-solid.png);
     background-repeat: no-repeat;
@@ -70,13 +70,19 @@ form input:not([type="checkbox"]):invalid + p {
 	display: block;
 }
 
-/*form input[type="text"]:invalid + p {
-	display: block;
+form input[name="username"] + p::before {
+	content: "Plese enter correct username";
+	color: red;
+	margin-bottom: 20px;
+	font-size: 13px;
 }
 
-form input[type="password"]:invalid + p{
-	display: block;
-}*/
+form input[name="password"] + p::before {
+	content: "Please enter password";
+	color: red;
+	margin-bottom: 20px;
+	font-size: 13px;
+}
 
 form input[type="checkbox"] {
 	margin-right: 5px;
@@ -98,4 +104,8 @@ form a {
 	text-decoration: none;
 	color: #17A2B8;
 	font-size: 12px;
+}
+
+form a:hover {
+	text-decoration: underline;
 }
